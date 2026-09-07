@@ -4,9 +4,7 @@ langchain-groq
 langchain-core
 python-dotenv
 mcp[cli]
+typer
+rich
 pydantic
 uvicorn
-anyio
-starlette
-httpx
-sse-starlette
