@@ -1,6 +1,18 @@
 import sqlite3
 import random
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.fastmcp import FastMCP
+except (ImportError, ModuleNotFoundError):
+    try:
+        from fastmcp import FastMCP
+    except Exception:
+        class FastMCP:
+            def __init__(self, *args, **kwargs):
+                pass
+            def tool(self, *args, **kwargs):
+                def decorator(f):
+                    return f
+                return decorator
 
 # Initialize MCP Server
 mcp = FastMCP("CarePulse Clinic Service")
