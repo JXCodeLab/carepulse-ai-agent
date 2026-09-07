@@ -3,4 +3,4 @@ langgraph
 langchain-groq
 langchain-core
 python-dotenv
-mcp
+mcp[cli]
